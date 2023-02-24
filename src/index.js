@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const bodyParser = require('path');
+const bodyParser = require('body-parser');
 const path = require('path');
 
 const port = 3000;
@@ -16,7 +16,7 @@ mongoose.Promise = global.Promise;
 var router = require('./routes/rutaSorteo');
 
 //cargar body parser
-app.use(bodyParser.urlencode({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false}));
 //cualquier tipo de peticion la convertimos en json
 app.use(bodyParser.json());
 

@@ -1,61 +1,60 @@
 const d = document;
 
 d.addEventListener("DOMContentLoaded", () => {
-    sorteoDos('sorteo-dos', 'agregar-jugador', 'ganador-btn-dos', 'lista-jugadores');
+  sorteoDos('sorteo-dos', 'agregar-jugador', 'ganador-btn-dos', 'lista-jugadores');
 });
 
 function sorteoDos(input, agregar, ganador, jugadores) { //agregamos 
-    const input = d.getElementById(input); //$ indica que estas trabajando en una etiqueta HTML
-    const agregar = d.getElementById(agregar);
-    const ganador = d.getElementById(ganador);
-    const jugadores = d.getElementById(jugadores);
-    let jugadoresArray = [];
+  const $input = document.getElementById(input), //$ indica que estas trabajando en una etiqueta HTML
+    $agregar = d.getElementById(agregar),
+    $ganador = d.getElementById(ganador),
+    $jugadores = d.getElementById(jugadores);
+  let jugadoresArray = [];
 
-    const agregarJugadores = () => {
-        const inputValue = input.value;
+  const agregarJugadores = () => {
+    const inputValue = $input.value;
 
-        if (inputValue === '' || inputValue.length === 0) {
-            alert('No has ingresado participante');
-        } else {
-            jugadoresArray.push(inputValue);
-            jugadores.insertAdjacentHTML("beforeend", `<li>${inputValue}</li>`);
-            inputValue = '';
-        }
-    };
-    const ganadorSorteo = () => {
-        input.focus();
+    if (inputValue === '' || inputValue.length === 0) {
+      alert('No has ingresado participante');
+    } else {
+      jugadoresArray.push(inputValue);
+      $jugadores.insertAdjacentHTML("beforeend", ` <li>${inputValue}</li> `);
+      $input.value = '';
+    }
+  };
+  const ganadorSorteo = () => {
+    $input.focus();
 
-        const random = Math.floor(Math.random() *
+    const random = Math.floor(Math.random() * jugadoresArray.length)
+    const jugadorGanador = jugadoresArray[random];
 
-            jugadoresArray.length)
-        const jugadorGanador = jugadoresArray[random];
+    jugadoresArray = [];
 
-        jugadoresArray = [];
+    setTimeout(() => {
+      $jugadores.innerHTML = "";
+    }, 2000);
 
-        setTimeout(() => {
-            jugadores.innerHTML = "";
-        }, 2000);
+    alert(`${jugadorGanador} fue seleccionado`);
+  };
 
-        alert(`${jugadorGanador} fue seleccionado`);
-        postData(jugadorGanador);
-    };
-
-    agregar.addEventListener('click', () => {
-        agregarJugadores()
-    });
-    ganador.addEventListener('click', () => {
-        if (jugadoresArray.length === 0) {
-            alert('No has ingresado participantes');
-        } else {
-            ganadorSorteo();
-        }
-    });
+  $agregar.addEventListener('click', () => {
+    agregarJugadores()
+  });
+  $ganador.addEventListener('click', () => {
+    if (jugadoresArray.length === 0) {
+      alert('No has ingresado participantes');
+    } else {
+      ganadorSorteo();
+      postData(ganadorSorteo);
+    }
+  });
 }
+
 async function postData(name){
-    const response = await fetch('http://localhost:3000/api/save', {
+    const response = await fetch('http://localhost:3000/', {
         method: 'POST',
         headers: {
-            'Accepted': 'aplication/json',
+            'Accept': 'aplication/json',
             'Content-Type': 'aplication/json'
         },
         body: JSON.stringify({

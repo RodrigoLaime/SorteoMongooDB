@@ -10,4 +10,4 @@ router.post('./sorteo', sorteoController.save);
 router.delete('./delete/id', sorteoController.deleteSorteo);
 router.put('./update/id', sorteoController.updateSorteo); */
 
-module.export = router;
+module.exports = router;
