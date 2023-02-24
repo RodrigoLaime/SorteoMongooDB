@@ -41,26 +41,27 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
     agregarJugadores()
   });
   $ganador.addEventListener('click', () => {
+    const ganador = '';
     if (jugadoresArray.length === 0) {
       alert('No has ingresado participantes');
     } else {
       ganadorSorteo();
-      postData(ganadorSorteo);
+      postData(ganador);
     }
   });
 }
 
-async function postData(name){
-    const response = await fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-            'Accept': 'aplication/json',
-            'Content-Type': 'aplication/json'
-        },
-        body: JSON.stringify({
-            'name': name,
-        })
-    });
-    const data = await response.json();
-    console.data(data);
+async function postData(name) {
+  const response = await fetch('http://localhost:3000/api/sorteo', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'name': name,
+    })
+  });
+  const data = await response.json();
+  console.data(data);
 }
