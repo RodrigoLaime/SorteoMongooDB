@@ -6,24 +6,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorteo</title>
-  <!-- <link rel="stylesheet" href="./css/sorteo.css"> -->
+  <link rel="stylesheet" href="./css/sorteo.css">
   <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <!-- fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <section class="sorteo-dos" id="container-sorteo-dos">
-    <div class="sorteo-dos-container">
-      <h2>Sorteo Digital</h2>
-      <ul id="lista-jugadores"></ul>
-      <div class="nombres">
-        <input id="sorteo-dos" type="text" value="Nombre" />
+  <header>
+    <ul>
+      <li>home</li>
+      <li>winner</li>
+    </ul>
+
+
+  </header>
+  <main>
+    <section class="sorteo-dos" id="container-sorteo-dos">
+
+      <!-- modal -->
+      <div class="modal active" id="modal">
+        <div class="container-modal">
+          <h2>winner</h2>
+          <p class="winner" id="winner"></p>
+        </div>
       </div>
-      <div class="botones">
-        <input id="agregar-jugador" type="button" value="Agregar Jugador" />
-        <input id="ganador-btn-dos" type="button" value="Sortear Ganador" />
+
+      <!-- container sorteo -->
+      <div class="sorteo-dos-container">
+        <h2>Sorteo Digital</h2>
+        <div class="nombres">
+          <input id="sorteo-dos" class="sorteo-dos" type="text" placeholder="Nombre" />
+          <button id="agregar-jugador" class="agregar-jugador" type="button" value="Agregar Jugador"><i
+              class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="botones">
+
+          <button id="ganador-btn-dos" class="ganador-btn-dos" type="button" value="Sortear Ganador">
+            Sorteo
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <!-- lista -->
+      <div class="lista">
+        <h3>Lista</h3>
+        <ul id="lista-jugadores" class="lista-jugadores">
+        </ul>
+      </div>
+
+    </section>
+  </main>
   <script src="./js/sorteo.js"></script>
 </body>
 

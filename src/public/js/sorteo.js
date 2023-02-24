@@ -4,6 +4,7 @@ d.addEventListener("DOMContentLoaded", () => {
   sorteoDos('sorteo-dos', 'agregar-jugador', 'ganador-btn-dos', 'lista-jugadores');
 });
 
+
 function sorteoDos(input, agregar, ganador, jugadores) { //agregamos 
   const $input = document.getElementById(input), //$ indica que estas trabajando en una etiqueta HTML
     $agregar = d.getElementById(agregar),
@@ -21,6 +22,7 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
       $jugadores.insertAdjacentHTML("beforeend", ` <li>${inputValue}</li> `);
       $input.value = '';
     }
+
   };
   const ganadorSorteo = () => {
     $input.focus();
@@ -34,23 +36,35 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
       $jugadores.innerHTML = "";
     }, 2000);
 
-    alert(`${jugadorGanador} fue seleccionado`);
+    //modal
+    const UserGandor = jugadorGanador;
+    const modal = document.getElementById('modal');
+    const winner = document.getElementById('winner');
+    if (UserGandor) {
+      postData(UserGandor);
+      winner.innerHTML = `El ganador fue: ${jugadorGanador} `
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.classList.add('active');
+      }, 4000);
+    }
   };
 
   $agregar.addEventListener('click', () => {
     agregarJugadores()
   });
+
   $ganador.addEventListener('click', () => {
-    const ganador = '';
     if (jugadoresArray.length === 0) {
       alert('No has ingresado participantes');
     } else {
       ganadorSorteo();
-      postData(ganador);
     }
   });
-}
+};
 
+
+//funcion para agregar a la base de datos
 async function postData(name) {
   const response = await fetch('http://localhost:3000/api/sorteo', {
     method: 'POST',
@@ -63,5 +77,5 @@ async function postData(name) {
     })
   });
   const data = await response.json();
-  console.data(data);
+  console.log(data);
 }
