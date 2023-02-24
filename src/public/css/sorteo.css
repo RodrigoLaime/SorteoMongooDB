@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  :root {
+    --verde1: #025E36;
+    --verde2: #03854C;
+    --verde3: #039E5B;
+    --verde4: #03AB62;
+    --verde5: #05EB87;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://st4.depositphotos.com/1005738/22064/v/600/depositphotos_220642064-stock-illustration-food-icon-seamless-pattern-with.jpg");
+    background-position: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sorteo-dos {
+    width: 300px;
+    height: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #03854d8f;
+    border: 2px solid var(--verde3);
+  }
+  
+  .sorteo-dos-container {
+    text-align: center;
+  }
+  
+  .sorteo-dos-container h2 {
+    font-size: 2rem;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
+  
+  .sorteo-dos-container ul {
+    padding: 10px;
+    border: 2px solid var(--verde3);
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    list-style: none;
+  }
+  
+  .nombres {
+    /* background-color: red; */
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .nombres input {
+    border: 2px solid var(--verde3);
+    background-color: transparent;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.6rem;
+  }
+  
+  .nombres input:hover {
+    border: 2px solid var(--verde5);
+  }
+  
+  .botones {
+    padding: 10px 0;
+  }
+  
+  .botones #agregar-jugador {
+    border: 2px solid var(--verde3);
+    background-color: transparent;
+    padding: 5px 0;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .botones #agregar-jugador:active {
+    background-color: var(--verde5);
+  }
+  
+  .botones #ganador-btn-dos {
+    border: 2px solid var(--verde3);
+    background-color: transparent;
+    padding: 5px 0;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .botones #ganador-btn-dos:active {
+    background-color: var(--verde5);
+  }
