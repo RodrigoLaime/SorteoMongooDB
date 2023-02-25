@@ -49,7 +49,7 @@ header ul li {
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 /* Modal */
@@ -109,15 +109,15 @@ main {
 
 .sorteo-dos-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 300px;
   min-width: 250px;
   position: relative;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.171);
+  padding-bottom: 20px;
+ /*  background-color: rgba(0, 0, 0, 0.171); */
 }
 
 .sorteo-dos-container {
-  /*   background-color: #025E36; */
   width: 100%;
   align-items: center;
   text-align: center;
@@ -126,61 +126,70 @@ main {
 .sorteo-dos-container h2 {
   font-size: 4rem;
   font-weight: 800;
-  padding: 30px 0;
+  padding: 20px 0;
+  background-color: #ff66008e;
+  border-radius: 5px 5px 5px 0px;
+}
+.sorteo-dos-container h4 {
+  background-color: #00000038;
+  width: 170px;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 0px 0px 5px 5px;
+  text-align: left;
+  border-top: 10px dashed #ff66008e;
+  margin-bottom: 20px;
 }
 
 .sorteo-dos-container .nombres {
-  background-color: white;
-  border-radius: 100px;
-  width: 280px;
+  width: 300px;
   align-items: center;
   display: flex;
-  margin: 0 auto;
-  border: 2px solid rgb(100, 100, 100);
+  gap: 10px;
+  justify-content: center;
+}
+.sorteo-dos-container .nombres .sorteo-dos {
+  border-radius: 100px;
+  background-color: white;
+  border: none;
+  width: 160px;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  border: 2px solid #FF6600;
 }
 
 .sorteo-dos-container .nombres .agregar-jugador {
   font-size: 2rem;
-  color: rgb(100, 100, 100);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  background-color: #FF6600;
 }
-
-
-.sorteo-dos-container .nombres .sorteo-dos {
-  background-color: transparent;
-  border: none;
-  width: 85%;
-  padding: 10px 15px;
-  font-size: 1.6rem;
-}
-
 .sorteo-dos-container .nombres .sorteo-dos:focus {
   outline: none;
 }
-
-.sorteo-dos-container .nombres .agregar-jugador {
-  background-color: transparent;
-  border: none;
-  width: 15%;
+.sorteo-dos-container .nombres .botones{
+  display: flex;
+  gap: 10px;
 }
 
-/* .sorteo-dos-container .botones {
-  background-color: seagreen;
-} */
 
 .sorteo-dos-container .botones .ganador-btn-dos {
   background-color: #FF6600;
   border: 2px solid white;
-  padding: 8px;
-  border-radius: 8px;
+  padding:  0 8px;
+  border-radius: 100px;
   color: white;
   font-size: 1.6rem;
   font-weight: bold;
-  margin: 20px 0;
 }
 
 /* lista */
 .sorteo-dos .lista {
-  background-color: rgba(0, 0, 0, 0.171);
+/*   background-color: rgba(0, 0, 0, 0.171); */
   width: 100%;
   max-width: 600px;
   min-width: 200px;
@@ -208,7 +217,7 @@ main {
 }
 
 
-@media (min-width: 575px) {
+@media (min-width: 640px) {
   .sorteo-dos {
     display: flex;
   }
