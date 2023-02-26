@@ -12,6 +12,7 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
     $jugadores = d.getElementById(jugadores);
   let jugadoresArray = [];
 
+  /* funcion agregar jugador */
   const agregarJugadores = () => {
     const inputValue = $input.value;
 
@@ -24,6 +25,8 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
     }
 
   };
+
+  /* funcion Mostrae ganador */
   const ganadorSorteo = () => {
     $input.focus();
 
@@ -34,26 +37,52 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
 
     setTimeout(() => {
       $jugadores.innerHTML = "";
-    }, 2000);
+    }, 4000);
 
-    //modal
     const UserGandor = jugadorGanador;
-    const modal = document.getElementById('modal');
-    const winner = document.getElementById('winner');
-    if (UserGandor) {
-      postData(UserGandor);
-      winner.innerHTML = `El ganador fue: ${jugadorGanador} `
-      modal.classList.remove('active');
-      setTimeout(() => {
-        modal.classList.add('active');
-      }, 4000);
+    //modal 
+    const modal = d.getElementById('modal');
+    const winner = d.getElementById('winner');
+    function modalFunction() {
+      if (UserGandor) {
+        postData(UserGandor);
+        winner.innerHTML = `El ganador fue: ${jugadorGanador} `
+        modal.classList.remove('active');
+        setTimeout(() => {
+          modal.classList.add('active');
+        }, 4000);
+      }
     }
+
+
+    //Contador
+    const contador = d.getElementById('contador')
+    const num = d.getElementById('numero');
+    let numero = 3;
+    const timer = setInterval(() => {
+      if (!!UserGandor && !!numero) {
+        contador.classList.remove('active');
+        console.log(numero);
+        num.innerHTML = `0${numero}`;
+        numero--;
+      } else if (!!UserGandor && numero == 0) {
+        contador.classList.add('active');
+        clearInterval(timer)
+        modalFunction(UserGandor);
+      }
+    }, 1000);
+
   };
 
+
+
+
+  /* boton agregar jugador */
   $agregar.addEventListener('click', () => {
     agregarJugadores()
   });
 
+  /* boton mostrar ganador */
   $ganador.addEventListener('click', () => {
     if (jugadoresArray.length === 0) {
       alert('No has ingresado participantes');
@@ -63,6 +92,7 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
   });
 };
 
+/* funcion contador */
 
 //funcion para agregar a la base de datos
 async function postData(name) {
@@ -79,3 +109,12 @@ async function postData(name) {
   const data = await response.json();
   console.log(data);
 }
+
+/* let numero = 3;
+  const timer = setInterval(()=>{
+    console.log(numero);          
+    numero--; 
+    if(numero == 0){
+       clearInterval(timer)
+    }
+  }, 1000); */

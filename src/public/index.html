@@ -22,8 +22,8 @@
 <body>
   <header>
     <ul>
-      <li>home</li>
-      <li>winner</li>
+      <li class="home">home</li>
+      <li class="winner">winner</li>
     </ul>
 
 
@@ -36,6 +36,12 @@
         <div class="container-modal">
           <h2>winner</h2>
           <p class="winner" id="winner"></p>
+        </div>
+      </div>
+      <!-- contador -->
+      <div class="contador active" id="contador">
+        <div class="container-contador">
+          <h2 class="numero" id="numero"></h2>
         </div>
       </div>
 
@@ -62,10 +68,15 @@
         <ul id="lista-jugadores" class="lista-jugadores">
         </ul>
       </div>
+      <!-- winnerList -->
+      <div class="winnerList" id="winnerList">
+        <ul class="winnerUl" id="winnerUl"></ul>
+      </div>
 
     </section>
   </main>
   <script src="./js/sorteo.js"></script>
+  <script src="./js/getSorteo.js"></script>
 </body>
 
 </html>
