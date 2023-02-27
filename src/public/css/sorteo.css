@@ -110,7 +110,8 @@ header ul .winner {
   z-index: 1;
   color: white;
 }
-.container-contador h2{
+
+.container-contador h2 {
   font-size: 4rem;
   padding: 25px 0;
 }
@@ -254,6 +255,37 @@ main {
   margin: 0 0 5px 0;
   border-left: 2px solid white;
 }
+
+/* lista winner */
+.winnerList {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
+  min-width: 150px;
+}
+
+.winnerList h3 {
+  font-size: 3rem;
+  background-color: #330000;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+.winnerList .winnerUl {
+  background-color: #00000038;
+  list-style: none;
+  text-align: left;
+  border-radius: 0 0 5px 5px;
+
+}
+
+.winnerList .winnerUl li {
+  padding: 5px;
+  margin: 0 5px;
+  font-size: 1.6rem;
+}
+
 
 
 @media (min-width: 640px) {

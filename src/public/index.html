@@ -22,8 +22,8 @@
 <body>
   <header>
     <ul>
-      <li class="home">home</li>
-      <li class="winner">winner</li>
+      <li class="home" id="home">home</li>
+      <li class="winner" id="winner">winner</li>
     </ul>
 
 
@@ -46,30 +46,30 @@
       </div>
 
       <!-- container sorteo -->
-      <div class="sorteo-dos-container">
+      <div class="sorteo-dos-container" id="sorteoDosContainer">
         <h2>Sorteo Digital</h2>
         <h4>ingresar dato</h4>
         <div class="nombres">
           <input id="sorteo-dos" class="sorteo-dos" type="text" placeholder="Nombre" />
-          
+
           <div class="botones">
-            <button id="agregar-jugador" class="agregar-jugador" type="button"><i
-              class="fa-solid fa-plus"></i></button>
-              <button id="ganador-btn-dos" class="ganador-btn-dos" type="button" value="Sortear Ganador">
-                Sorteo
-              </button>
-            </div>
+            <button id="agregar-jugador" class="agregar-jugador" type="button"><i class="fa-solid fa-plus"></i></button>
+            <button id="ganador-btn-dos" class="ganador-btn-dos" type="button" value="Sortear Ganador">
+              Sorteo
+            </button>
           </div>
+        </div>
       </div>
 
       <!-- lista -->
-      <div class="lista">
+      <div class="lista" id="lista">
         <h3>Lista</h3>
         <ul id="lista-jugadores" class="lista-jugadores">
         </ul>
       </div>
       <!-- winnerList -->
-      <div class="winnerList" id="winnerList">
+      <div class="winnerList active" id="winnerList">
+        <h3>Users Winner</h3>
         <ul class="winnerUl" id="winnerUl"></ul>
       </div>
 
@@ -77,6 +77,7 @@
   </main>
   <script src="./js/sorteo.js"></script>
   <script src="./js/getSorteo.js"></script>
+  <script src="./js/button.js"></script>
 </body>
 
 </html>
