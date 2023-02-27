@@ -75,12 +75,17 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
   };
 
 
-
-
-  /* boton agregar jugador */
+  //boton enter
+  window.addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+      agregarJugadores()
+    }
+  })
+  // boton agregar jugador
   $agregar.addEventListener('click', () => {
     agregarJugadores()
   });
+
 
   /* boton mostrar ganador */
   $ganador.addEventListener('click', () => {
