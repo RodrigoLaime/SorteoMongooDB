@@ -67,7 +67,7 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
         numero--;
       } else if (!!UserGandor && numero == 0) {
         contador.classList.add('active');
-        clearInterval(timer)
+        clearInterval(timer);
         modalFunction(UserGandor);
       }
     }, 1000);
@@ -101,10 +101,9 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
 
 //funcion para agregar a la base de datos
 
-const { config } = require('../../index')
-const apiPost = config.apiPost;
+const api = 'http://localhost:3000/api/sorteo'
 async function postData(name) {
-  const response = await fetch(apiPost, {
+  const response = await fetch(api, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
