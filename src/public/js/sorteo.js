@@ -101,10 +101,10 @@ function sorteoDos(input, agregar, ganador, jugadores) { //agregamos
 
 //funcion para agregar a la base de datos
 
-const API = process.env.API_POST;
-
+const { config } = require('../../index')
+const apiPost = config.apiPost;
 async function postData(name) {
-  const response = await fetch(API, {
+  const response = await fetch(apiPost, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
