@@ -8,7 +8,10 @@ const port = 3000;
 //archivos estaticos busca  el archivo  htlm
 app.use(express.static(path.join(__dirname, './public')));
 
-const url = 'mongodb+srv://hp-envy:q1kMHqGtFxS57YUI@cluster0.kpp1aja.mongodb.net/sorteo';
+//envairoment
+const URL = process.env.URL_MONGOOSE;
+
+const url = URL;
 
 // configuracion para evitar fallo de coneccion
 mongoose.Promise = global.Promise;
